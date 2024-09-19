@@ -22,7 +22,7 @@ Resources:
       Handler: fiap.App::handleRequest
       Runtime: java21
       Architectures:
-      - x86_64
+        - x86_64
       MemorySize: 512
       Role: arn:aws:iam::862807292265:role/LabRole
       Environment:
