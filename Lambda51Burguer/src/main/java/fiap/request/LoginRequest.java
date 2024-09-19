@@ -1,5 +1,5 @@
 package fiap.request;
 
-public record LoginRequest(String username, String cpf) {
+public record LoginRequest(String nome, String cpf) {
 
 }

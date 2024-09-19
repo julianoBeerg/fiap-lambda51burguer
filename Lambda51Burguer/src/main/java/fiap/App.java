@@ -1,13 +1,7 @@
 package fiap;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
@@ -39,7 +33,7 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
 
             var loginRequest = objectMapper.readValue(request.getBody(), LoginRequest.class);
 
-            boolean isAuthorized = loginRequest.username().equalsIgnoreCase("admin")
+            boolean isAuthorized = loginRequest.nome().equalsIgnoreCase("admin")
                     && loginRequest.cpf().equalsIgnoreCase("admin");
 
             var loginResponse = new LoginResponse(isAuthorized);
