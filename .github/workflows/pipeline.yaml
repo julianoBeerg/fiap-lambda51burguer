@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Configure AWS Credentials
+      - name: Configure Authentication Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -34,19 +34,19 @@ jobs:
       - name: Install Dependencies
         run: sudo apt-get update && sudo apt-get install -y python3-pip
 
-      - name: Install AWS SAM CLI
+      - name: Install AWS Authentication CLI
         run: pip3 install aws-sam-cli
 
-      - name: Build SAM Application
+      - name: Build Authentication Application
         run: sam build
 
-      - name: Validate SAM Template
+      - name: Validate Authentication Template
         run: sam validate
 
-      - name: Deploy SAM Application
+      - name: Deploy Authentication Costumer Application
         run: |
           sam deploy \
-            --stack-name sam-teste \
+            --stack-name fiap-lambda51burguer \
             --no-confirm-changeset \
             --no-fail-on-empty-changeset \
             --capabilities CAPABILITY_IAM \
