@@ -5,6 +5,8 @@ import com.amazonaws.services.secretsmanager.model.GetSecretValueRequest;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueResult;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import io.jsonwebtoken.Claims;
+
 import java.util.Date;
 
 public class JwtUtil {
@@ -30,4 +32,12 @@ public class JwtUtil {
                 .withExpiresAt(expirationDate)
                 .sign(algorithm);
     }
+
+    public String generateGenericToken() {
+        return JWT.create()
+                .withClaim("name", "genericUser")
+                .withExpiresAt(expirationDate)
+                .sign(algorithm);
+    }
+
 }
