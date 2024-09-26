@@ -5,7 +5,7 @@ Description: 'fiap-lambda51burguer
   '
 Globals:
   Function:
-    Timeout: 20
+    Timeout: 30
     MemorySize: 512
 Resources:
   AuthLambda:

@@ -7,6 +7,8 @@ public class LoginResponse {
     private final String email;
     private final boolean isAuthorized;
     private final boolean isAdmin;
+    private final String token;
+
 
     public LoginResponse() {
         this.id = 0;
@@ -15,15 +17,18 @@ public class LoginResponse {
         this.email = "";
         this.isAuthorized = false;
         this.isAdmin = false;
+        this.token = "";
+
     }
 
-    public LoginResponse(int id, String nome, String cpf, String email, boolean isAuthorized, boolean isAdmin) {
+    public LoginResponse(int id, String nome, String cpf, String email, boolean isAuthorized, boolean isAdmin, String token) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.isAuthorized = isAuthorized;
         this.isAdmin = isAdmin;
+        this.token = token;
     }
 
     public int getId() {
@@ -48,5 +53,9 @@ public class LoginResponse {
 
     public boolean isAdmin() {
         return isAdmin;
+    }
+
+    public String getToken() {
+        return token;
     }
 }

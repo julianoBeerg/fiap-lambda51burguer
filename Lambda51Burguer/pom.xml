@@ -34,6 +34,15 @@
           <version>4.13.2</version>
           <scope>test</scope>
         </dependency>
+
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-secretsmanager</artifactId>
+            <version>1.12.400</version>
+        </dependency>
+
+        <!-- Dependência para JWT -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>

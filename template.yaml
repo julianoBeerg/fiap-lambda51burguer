@@ -5,7 +5,7 @@ Description: >
 
 Globals:
   Function:
-    Timeout: 20
+    Timeout: 30
     MemorySize: 512
 
 Resources:
@@ -28,3 +28,5 @@ Resources:
           Properties:
             Path: /admin
             Method: post
+
+        
