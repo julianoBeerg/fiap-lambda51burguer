@@ -2,34 +2,30 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: 'fiap-lambda51burguer
 
-  Sample SAM Template for fiap-lambda51burguer
-
   '
 Globals:
   Function:
     Timeout: 20
     MemorySize: 512
-    LoggingConfig:
-      LogFormat: JSON
 Resources:
-  Lambda51Burguer:
+  AuthLambda:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: Lambda51Burguer
+      CodeUri: AuthLambda
       Handler: fiap.App::handleRequest
       Runtime: java21
-      Architectures:
-      - x86_64
       MemorySize: 512
       Role: arn:aws:iam::862807292265:role/LabRole
-      Environment:
-        Variables:
-          PARAM1: VALUE
       Events:
-        HelloWorld:
+        UserApi:
           Type: Api
           Properties:
-            Path: /
-            Method: get
+            Path: /user
+            Method: post
+        AdminApi:
+          Type: Api
+          Properties:
+            Path: /admin
+            Method: post
     Metadata:
-      SamResourceId: Lambda51Burguer
+      SamResourceId: AuthLambda
