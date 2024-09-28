@@ -6,11 +6,14 @@ import com.amazonaws.services.secretsmanager.AWSSecretsManager;
 import com.amazonaws.services.secretsmanager.AWSSecretsManagerClientBuilder;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueRequest;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueResult;
+import fiap.model.User;
+import fiap.repository.UserRepository;
 import fiap.response.LoginResponse;
 import fiap.request.LoginRequest;
 import fiap.utils.CpfValidator;
 import fiap.utils.JwtUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -22,22 +25,26 @@ public class AuthService {
     private final AWSCognitoIdentityProvider cognitoClient = AWSCognitoIdentityProviderClientBuilder.defaultClient();
     private final AWSSecretsManager secretsManager = AWSSecretsManagerClientBuilder.defaultClient();
     private final JwtUtil jwtUtil = new JwtUtil();
+    private final UserRepository userRepository;
 
-    public AuthService() {
+    public AuthService(UserRepository userRepository) {
+        this.userRepository = userRepository;
         Map<String, String> secretValues = getSecretValues();
         this.userPoolId = secretValues.get("UserPoolId");
         this.clientId = secretValues.get("UserPoolClientId");
     }
 
     public LoginResponse authenticate(LoginRequest request, String path) throws Exception {
-        String cpf = request.getCpf();
+
+        String cpf = request.getCpf().replaceAll("[^0-9]", "");
         String nome = request.getName();
         String email = request.getEmail();
         String password = request.getPassword();
 
         boolean isAdminPath = path.contains("admin");
 
-        if (!isAdminPath && (cpf == null || cpf.isEmpty())) {
+        if (!isAdminPath && cpf.isEmpty()) {
+
             String token = jwtUtil.generateAnonymousToken();
             return new LoginResponse(token);
         }
@@ -46,8 +53,16 @@ public class AuthService {
             throw new IllegalArgumentException("CPF '" + cpf + "' inválido!");
         }
 
-        try {
+        User user = userRepository.findByCpf(cpf);
+        if (user == null) {
+            if (nome != null && email != null && !nome.isEmpty() && !email.isEmpty()) {
+                user = userRepository.createUser(cpf, nome, email);
+            } else {
+                throw new RuntimeException("Usuário não encontrado e informações de registro incompletas");
+            }
+        }
 
+        try {
             AdminGetUserRequest adminGetUserRequest = new AdminGetUserRequest()
                     .withUserPoolId(userPoolId)
                     .withUsername(cpf);
@@ -56,15 +71,14 @@ public class AuthService {
 
             String userEmail = getAttributeValue(adminGetUserResult.getUserAttributes(), "email");
             String userNameAttr = getAttributeValue(adminGetUserResult.getUserAttributes(), "name");
-
             boolean isAdmin = checkUserIsAdmin(cpf);
 
-            if (isAdminPath && !isAdmin && (email.isEmpty() || nome.isEmpty())) {
+            if (isAdminPath && !isAdmin && (email.isEmpty() || nome.isEmpty() || password.isEmpty())) {
                 throw new IllegalAccessException("Acesso negado: usuário não tem permissão para acessar a API admin.");
             }
 
             String token = jwtUtil.generateToken(
-                    0,
+                    user.getId(),
                     userNameAttr,
                     cpf,
                     userEmail,
@@ -75,20 +89,16 @@ public class AuthService {
 
         } catch (UserNotFoundException | ResourceNotFoundException e) {
 
-            if (nome != null && email != null && !nome.isEmpty() && !email.isEmpty()) {
-                signUpUser(cpf, nome, email, isAdminPath, password);
-                return authenticate(request, path);
-            } else {
-                throw new RuntimeException("Usuário não encontrado e informações de registro incompletas");
-            }
+            signUpUser(cpf, nome, email, password, isAdminPath);
+            return authenticate(request, path);
         }
     }
 
-    private void signUpUser(String cpf, String nome, String email, boolean isAdmin, String password) {
+    private void signUpUser(String cpf, String nome, String email, String password, boolean isAdmin) {
         SignUpRequest signUpRequest = new SignUpRequest()
                 .withClientId(clientId)
                 .withUsername(cpf)
-                .withPassword(isAdmin ? password : cpf)
+                .withPassword(isAdmin ? password : "@GenericAuth123")
                 .withUserAttributes(
                         new AttributeType().withName("name").withValue(nome),
                         new AttributeType().withName("email").withValue(email)
@@ -131,7 +141,7 @@ public class AuthService {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             return objectMapper.readValue(getSecretValueResult.getSecretString(), Map.class);
-        } catch (Exception e) {
+        } catch (IOException e) {
             throw new RuntimeException("Erro ao obter valores do Secrets Manager", e);
         }
     }
