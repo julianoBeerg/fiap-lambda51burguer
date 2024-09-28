@@ -3,7 +3,7 @@ name: Deploy Lambda Function Validate CPF
 on:
   push:
     branches:
-      - main
+      - feature/ConsultaDB
   workflow_dispatch:
 
 env:
