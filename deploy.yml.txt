@@ -1,0 +1,90 @@
+# .github/workflows/deploy.yml
+
+name: Deploy Infrastructure and Lambda Function
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AWS_REGION: 'us-east-1'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Passo do Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0  # Altere para a versão desejada
+
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: terraform init
+
+      - name: Terraform Plan
+        working-directory: ./terraform
+        run: terraform plan -out=tfplan
+
+      - name: Terraform Apply
+        working-directory: ./terraform
+        run: terraform apply -auto-approve tfplan
+
+      # Opcional: Exportar outputs do Terraform para usar no SAM
+      - name: Get Terraform Outputs
+        id: tf_outputs
+        working-directory: ./terraform
+        run: |
+          echo "USER_POOL_ID=$(terraform output -raw user_pool_id)" >> $GITHUB_ENV
+          echo "USER_POOL_CLIENT_ID=$(terraform output -raw user_pool_client_id)" >> $GITHUB_ENV
+          echo "IDENTITY_POOL_ID=$(terraform output -raw identity_pool_id)" >> $GITHUB_ENV
+          echo "COGNITO_IDS_SECRET_ARN=$(terraform output -raw cognito_ids_secret_arn)" >> $GITHUB_ENV
+
+      # Passos do SAM
+      - name: Setup JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'zulu'
+
+      - name: Install Dependencies
+        run: sudo apt-get update && sudo apt-get install -y python3-pip
+
+      - name: Install AWS SAM CLI
+        run: pip3 install aws-sam-cli
+
+      - name: Build Authentication Application
+        working-directory: ./sam
+        run: sam build
+
+      - name: Validate Authentication Template
+        working-directory: ./sam
+        run: sam validate
+
+      - name: Deploy Authentication Customer Application
+        working-directory: ./sam
+        run: |
+          sam deploy \
+            --stack-name fiap-lambda51burguer \
+            --no-confirm-changeset \
+            --no-fail-on-empty-changeset \
+            --capabilities CAPABILITY_IAM \
+            --region ${{ env.AWS_REGION }} \
+            --parameter-overrides \
+              UserPoolId=${{ env.USER_POOL_ID }} \
+              UserPoolClientId=${{ env.USER_POOL_CLIENT_ID }} \
+              IdentityPoolId=${{ env.IDENTITY_POOL_ID }}

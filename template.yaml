@@ -1,7 +1,20 @@
+# sam/template.yaml
+
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
   fiap-lambda51burguer
+
+Parameters:
+  UserPoolId:
+    Type: String
+    Description: "ID do User Pool do Cognito"
+  UserPoolClientId:
+    Type: String
+    Description: "ID do User Pool Client do Cognito"
+  IdentityPoolId:
+    Type: String
+    Description: "ID do Identity Pool do Cognito"
 
 Globals:
   Function:
@@ -19,6 +32,11 @@ Resources:
       Runtime: java21
       MemorySize: 512
       Role: arn:aws:iam::862807292265:role/LabRole
+      Environment:
+        Variables:
+          USER_POOL_ID: !Ref UserPoolId
+          USER_POOL_CLIENT_ID: !Ref UserPoolClientId
+          IDENTITY_POOL_ID: !Ref IdentityPoolId
       Events:
         UserApi:
           Type: Api
@@ -31,81 +49,9 @@ Resources:
             Path: /admin
             Method: post
 
-  CognitoUserPool:
-    Type: AWS::Cognito::UserPool
-    Properties:
-      UserPoolName: BurgerUserPool
-      AutoVerifiedAttributes:
-        - email
-      Policies:
-        PasswordPolicy:
-          MinimumLength: 8
-          RequireUppercase: true
-          RequireLowercase: true
-          RequireNumbers: true
-          RequireSymbols: false
-
-  CognitoUserPoolClient:
-    Type: AWS::Cognito::UserPoolClient
-    Properties: 
-      ClientName: BurgerUserPoolClient
-      UserPoolId: !Ref CognitoUserPool
-      GenerateSecret: false
-      AllowedOAuthFlows:
-        - implicit
-      AllowedOAuthScopes:
-        - email
-        - openid
-      CallbackURLs:
-        - https://example.com/callback
-      LogoutURLs:
-        - https://example.com/logout
-
-  CognitoIdentityPool:
-    Type: AWS::Cognito::IdentityPool
-    Properties:
-      IdentityPoolName: BurgerIdentityPool
-      AllowUnauthenticatedIdentities: true
-      CognitoIdentityProviders:
-        - ClientId: !Ref CognitoUserPoolClient
-          ProviderName: !GetAtt CognitoUserPool.ProviderName
-
-  CognitoUserGroupAdmin:
-    Type: AWS::Cognito::UserPoolGroup
-    Properties:
-      GroupName: Admin
-      UserPoolId: !Ref CognitoUserPool
-      Description: "Group for admin users"
-
-  CognitoUserGroupUsers:
-    Type: AWS::Cognito::UserPoolGroup
-    Properties:
-      GroupName: User
-      UserPoolId: !Ref CognitoUserPool
-      Description: "Group for regular users"
-
-  SecretCognitoIds:
-    Type: AWS::SecretsManager::Secret
-    Properties:
-      Name: CognitoIds
-      SecretString: !Sub |
-        {
-          "UserPoolId": "${CognitoUserPool}",
-          "UserPoolClientId": "${CognitoUserPoolClient}"
-        }
-
 Outputs:
-  UserPoolId:
-    Value: !Ref CognitoUserPool
+  LambdaFunctionArn:
+    Description: "ARN da função Lambda"
+    Value: !GetAtt AuthLambda.Arn
     Export:
-      Name: UserPoolId
-
-  UserPoolClientId:
-    Value: !Ref CognitoUserPoolClient
-    Export:
-      Name: UserPoolClientId
-
-  IdentityPoolId:
-    Value: !Ref CognitoIdentityPool
-    Export:
-      Name: IdentityPoolId
+      Name: LambdaFunctionArn

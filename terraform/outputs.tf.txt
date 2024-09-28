@@ -1,0 +1,17 @@
+# terraform/outputs.tf
+
+output "user_pool_id" {
+  value = aws_cognito_user_pool.burger_user_pool.id
+}
+
+output "user_pool_client_id" {
+  value = aws_cognito_user_pool_client.burger_user_pool_client.id
+}
+
+output "identity_pool_id" {
+  value = aws_cognito_identity_pool.burger_identity_pool.id
+}
+
+output "cognito_ids_secret_arn" {
+  value = aws_secretsmanager_secret.cognito_ids.arn
+}

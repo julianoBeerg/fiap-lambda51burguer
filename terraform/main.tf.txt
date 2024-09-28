@@ -1,0 +1,77 @@
+# terraform/main.tf
+
+provider "aws" {
+  region = var.aws_region
+}
+
+resource "aws_cognito_user_pool" "burger_user_pool" {
+  name = "BurgerUserPool"
+
+  auto_verified_attributes = ["email"]
+
+  password_policy {
+    minimum_length    = 8
+    require_uppercase = true
+    require_lowercase = true
+    require_numbers   = true
+    require_symbols   = false
+  }
+}
+
+resource "aws_cognito_user_pool_client" "burger_user_pool_client" {
+  name           = "BurgerUserPoolClient"
+  user_pool_id   = aws_cognito_user_pool.burger_user_pool.id
+  generate_secret = false
+
+  allowed_oauth_flows = ["implicit"]
+  allowed_oauth_scopes = ["email", "openid"]
+  callback_urls       = ["https://example.com/callback"]
+  logout_urls         = ["https://example.com/logout"]
+}
+
+resource "aws_cognito_identity_pool" "burger_identity_pool" {
+  identity_pool_name               = "BurgerIdentityPool"
+  allow_unauthenticated_identities = true
+
+  cognito_identity_providers {
+    client_id       = aws_cognito_user_pool_client.burger_user_pool_client.id
+    provider_name   = aws_cognito_user_pool.burger_user_pool.provider_name
+  }
+}
+
+resource "aws_cognito_user_group" "admins" {
+  user_pool_id = aws_cognito_user_pool.burger_user_pool.id
+  name         = "Admins"
+  description  = "Group for admin users"
+}
+
+resource "aws_cognito_user_group" "users" {
+  user_pool_id = aws_cognito_user_pool.burger_user_pool.id
+  name         = "Users"
+  description  = "Group for regular users"
+}
+
+resource "aws_secretsmanager_secret" "cognito_ids" {
+  name = "CognitoIds"
+
+  secret_string = jsonencode({
+    UserPoolId       = aws_cognito_user_pool.burger_user_pool.id
+    UserPoolClientId = aws_cognito_user_pool_client.burger_user_pool_client.id
+  })
+}
+
+output "user_pool_id" {
+  value = aws_cognito_user_pool.burger_user_pool.id
+}
+
+output "user_pool_client_id" {
+  value = aws_cognito_user_pool_client.burger_user_pool_client.id
+}
+
+output "identity_pool_id" {
+  value = aws_cognito_identity_pool.burger_identity_pool.id
+}
+
+output "cognito_ids_secret_arn" {
+  value = aws_secretsmanager_secret.cognito_ids.arn
+}
