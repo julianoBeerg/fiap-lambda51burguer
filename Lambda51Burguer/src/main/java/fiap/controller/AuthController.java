@@ -4,13 +4,16 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import fiap.Service.AuthService;
+import fiap.repository.UserRepository;
 import fiap.request.LoginRequest;
 import fiap.response.LoginResponse;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class AuthController implements RequestHandler<Map<String, Object>, Map<String, Object>> {
-    private final AuthService authService = new AuthService();
+    private final UserRepository userRepository = new UserRepository();
+    private final AuthService authService = new AuthService(userRepository);
 
     @Override
     public Map<String, Object> handleRequest(Map<String, Object> input, Context context) {
