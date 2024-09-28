@@ -1,4 +1,5 @@
 package fiap.controller;
+
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,8 +14,6 @@ public class AuthController implements RequestHandler<Map<String, Object>, Map<S
 
     @Override
     public Map<String, Object> handleRequest(Map<String, Object> input, Context context) {
-        context.getLogger().log("Input: " + input);
-
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
 
@@ -32,20 +31,16 @@ public class AuthController implements RequestHandler<Map<String, Object>, Map<S
             response.put("body", objectMapper.writeValueAsString(loginResponse));
 
         } catch (IllegalArgumentException e) {
-            context.getLogger().log("IllegalArgumentException: " + e.getMessage());
             response.put("statusCode", 400);
             response.put("body", "{\"status\": 400, \"message\": \"" + e.getMessage() + "\", \"timestamp\": " + System.currentTimeMillis() + "}");
         } catch (RuntimeException e) {
-            context.getLogger().log("RuntimeException: " + e.getMessage());
             response.put("statusCode", 404);
             response.put("body", "{\"status\": 404, \"message\": \"" + e.getMessage() + "\", \"timestamp\": " + System.currentTimeMillis() + "}");
         } catch (Exception e) {
-            context.getLogger().log("Exception: " + e.getMessage());
             response.put("statusCode", 500);
             response.put("body", "{\"status\": 500, \"message\": \"Erro interno: " + e.getMessage() + "\", \"timestamp\": " + System.currentTimeMillis() + "}");
         }
 
         return response;
     }
-
 }

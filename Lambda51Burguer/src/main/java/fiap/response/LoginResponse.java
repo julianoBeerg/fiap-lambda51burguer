@@ -1,22 +1,19 @@
 package fiap.response;
 
 public class LoginResponse {
+    private String token;
 
-    private final String token;
-
-
-    public LoginResponse() {
-
-        this.token = "";
-
-    }
+    public LoginResponse() {}
 
     public LoginResponse(String token) {
         this.token = token;
     }
 
-
     public String getToken() {
         return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

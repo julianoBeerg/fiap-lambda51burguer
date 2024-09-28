@@ -5,130 +5,75 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60eb7174-80f1-4817-a88d-effc0f9f7aca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/request/LoginRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/response/LoginResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.amazonaws.aws-java-sdk-cognitoidp-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.amazonaws.aws-java-sdk-core-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.amazonaws.aws-lambda-java-core-1.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.amazonaws.jmespath-java-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.auth0.java-jwt-3.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.fasterxml.jackson.core.jackson-annotations-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.fasterxml.jackson.core.jackson-core-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.fasterxml.jackson.core.jackson-databind-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.12.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.github.stephenc.jcip.jcip-annotations-1.0-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/com.nimbusds.nimbus-jose-jwt-9.37.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/commons-codec.commons-codec-1.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/commons-logging.commons-logging-1.1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/io.jsonwebtoken.jjwt-0.9.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/joda-time.joda-time-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/org.apache.httpcomponents.httpclient-4.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/org.apache.httpcomponents.httpcore-4.4.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/lib/software.amazon.ion.ion-java-1.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/request/LoginRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/response/LoginResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-cognitoidp-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-core-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-lambda-java-core-1.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.jmespath-java-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.auth0.java-jwt-3.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-annotations-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-core-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-databind-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.12.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.github.stephenc.jcip.jcip-annotations-1.0-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.nimbusds.nimbus-jose-jwt-9.37.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/commons-codec.commons-codec-1.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/commons-logging.commons-logging-1.1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/io.jsonwebtoken.jjwt-0.9.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/joda-time.joda-time-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/org.apache.httpcomponents.httpclient-4.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/org.apache.httpcomponents.httpcore-4.4.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/software.amazon.ion.ion-java-1.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-cognitoidp-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-core-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-lambda-java-core-1.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.jmespath-java-1.12.300.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.auth0.java-jwt-3.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-annotations-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-core-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-databind-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.12.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.15.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.github.stephenc.jcip.jcip-annotations-1.0-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.nimbusds.nimbus-jose-jwt-9.37.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/commons-codec.commons-codec-1.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/commons-logging.commons-logging-1.1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/io.jsonwebtoken.jjwt-0.9.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/joda-time.joda-time-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/org.apache.httpcomponents.httpclient-4.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/org.apache.httpcomponents.httpcore-4.4.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/software.amazon.ion.ion-java-1.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/Lambda51Burguer-1.0-shaded.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-fiap.AppTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/fiap.AppTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.aws-sam/build.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/fiap/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/fiap/request/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/fiap/response/LoginResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/lib/com.amazonaws.aws-lambda-java-core-1.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/lib/com.fasterxml.jackson.core.jackson-annotations-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/lib/com.fasterxml.jackson.core.jackson-core-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/lib/com.fasterxml.jackson.core.jackson-databind-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/Lambda51Burguer/lib/joda-time.joda-time-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/Service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/Service/AuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/request/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/request/LoginRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/response/LoginResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/response/LoginResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/utils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/utils/JwtUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.aws-sam/build/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/template.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/fiap/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/fiap/request/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/fiap/response/LoginResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.amazonaws.aws-lambda-java-core-1.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.core.jackson-annotations-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.core.jackson-core-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.core.jackson-databind-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/joda-time.joda-time-2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.amazonaws.aws-lambda-java-core-1.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.core.jackson-annotations-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.core.jackson-core-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.core.jackson-databind-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.15.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/d609185d-8e2d-497a-8d8f-73e3222a0faf/lib/joda-time.joda-time-2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/Service/AuthService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/request/LoginRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/response/LoginResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/utils/CpfValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/fiap/utils/JwtUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-cognitoidp-1.12.300.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-core-1.12.400.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-secretsmanager-1.12.400.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-lambda-java-core-1.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.jmespath-java-1.12.400.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.auth0.java-jwt-3.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-annotations-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-core-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-databind-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.12.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.github.stephenc.jcip.jcip-annotations-1.0-1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.nimbusds.nimbus-jose-jwt-9.37.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/commons-codec.commons-codec-1.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/commons-logging.commons-logging-1.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/io.jsonwebtoken.jjwt-0.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/joda-time.joda-time-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/org.apache.httpcomponents.httpclient-4.5.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/org.apache.httpcomponents.httpcore-4.4.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/software.amazon.ion.ion-java-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-cognitoidp-1.12.300.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-core-1.12.400.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-java-sdk-secretsmanager-1.12.400.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-lambda-java-core-1.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.aws-lambda-java-events-3.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.amazonaws.jmespath-java-1.12.400.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.auth0.java-jwt-3.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-annotations-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-core-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.core.jackson-databind-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.12.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.15.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.github.stephenc.jcip.jcip-annotations-1.0-1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/com.nimbusds.nimbus-jose-jwt-9.37.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/commons-codec.commons-codec-1.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/commons-logging.commons-logging-1.1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/io.jsonwebtoken.jjwt-0.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/joda-time.joda-time-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/org.apache.httpcomponents.httpclient-4.5.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/org.apache.httpcomponents.httpcore-4.4.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.aws-sam/deps/69c28c04-53fa-4bc5-9651-dfc874120db0/lib/software.amazon.ion.ion-java-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fiap/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fiap/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/request/LoginRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fiap/response/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/response/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fiap/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fiap/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Lambda51Burguer-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lambda51Burguer-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fiap/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fiap/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fiap/response/LoginResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fiap/response/LoginResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Lambda51Burguer-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Lambda51Burguer-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/fiap/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fiap/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/utils/JwtUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../template.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,19 +98,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.AppTest.executor": "Run",
-    "JUnit.AppTest.testHandleRequestAdminUser.executor": "Run",
-    "JUnit.AppTest.testHandleRequestUnauthorizedAdminUser.executor": "Run",
-    "Maven.Lambda51Burguer [install].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/dev/java projects/fiap-lambda51burguer/Lambda51Burguer"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;AWS Lambda.[Local] fiap.App.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTest.testHandleRequestAdminUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTest.testHandleRequestUnauthorizedAdminUser.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Lambda51Burguer [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/auth&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/java projects/fiap-lambda51burguer/events/event.json&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.AppTest">
+}</component>
+  <component name="RunManager" selected="AWS Lambda.[Local] fiap.App">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lambda51Burguer" />
       <extension name="coverage">
@@ -213,8 +159,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="[Local] fiap.App" type="aws.lambda" factoryName="Local" temporary="true" nameIsGenerated="true">
+      <option name="credentialProviderId" value="profile:default" />
+      <option name="regionId" value="us-east-1" />
+      <option name="debugHost" value="localhost" />
+      <option name="architecture" />
+      <option name="environmentVariables">
+        <map />
+      </option>
+      <option name="handler" />
+      <option name="image" value="false" />
+      <option name="logicalFunctionName" value="AuthLambda" />
+      <option name="memorySize" value="128" />
+      <option name="pathMappings">
+        <list />
+      </option>
+      <option name="platform" />
+      <option name="runtime" />
+      <option name="templateFile" value="$PROJECT_DIR$/../template.yaml" />
+      <option name="timeout" value="300" />
+      <option name="useTemplate" value="true" />
+      <option name="input" value="C:\dev\java projects\fiap-lambda51burguer\events\event.json" />
+      <option name="inputIsFile" value="true" />
+      <sam>
+        <option name="additionalBuildArgs" value="" />
+        <option name="additionalLocalArgs" value="" />
+        <option name="buildInContainer" value="false" />
+        <option name="dockerNetwork" value="" />
+        <option name="skipImagePull" value="false" />
+      </sam>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="AWS Lambda.[Local] fiap.App" />
         <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.AppTest.testHandleRequestAdminUser" />
         <item itemvalue="JUnit.AppTest.testHandleRequestUnauthorizedAdminUser" />

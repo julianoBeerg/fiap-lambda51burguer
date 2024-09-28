@@ -7,6 +7,8 @@ Globals:
   Function:
     Timeout: 30
     MemorySize: 512
+    LoggingConfig:
+      LogFormat: JSON
 
 Resources:
   AuthLambda:
@@ -29,4 +31,81 @@ Resources:
             Path: /admin
             Method: post
 
-        
+  CognitoUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: BurgerUserPool
+      AutoVerifiedAttributes:
+        - email
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireUppercase: true
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: false
+
+  CognitoUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties: 
+      ClientName: BurgerUserPoolClient
+      UserPoolId: !Ref CognitoUserPool
+      GenerateSecret: false
+      AllowedOAuthFlows:
+        - implicit
+      AllowedOAuthScopes:
+        - email
+        - openid
+      CallbackURLs:
+        - https://example.com/callback
+      LogoutURLs:
+        - https://example.com/logout
+
+  CognitoIdentityPool:
+    Type: AWS::Cognito::IdentityPool
+    Properties:
+      IdentityPoolName: BurgerIdentityPool
+      AllowUnauthenticatedIdentities: true
+      CognitoIdentityProviders:
+        - ClientId: !Ref CognitoUserPoolClient
+          ProviderName: !GetAtt CognitoUserPool.ProviderName
+
+  CognitoUserGroupAdmin:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: Admin
+      UserPoolId: !Ref CognitoUserPool
+      Description: "Group for admin users"
+
+  CognitoUserGroupUsers:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: User
+      UserPoolId: !Ref CognitoUserPool
+      Description: "Group for regular users"
+
+  SecretCognitoIds:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: CognitoIds
+      SecretString: !Sub |
+        {
+          "UserPoolId": "${CognitoUserPool}",
+          "UserPoolClientId": "${CognitoUserPoolClient}"
+        }
+
+Outputs:
+  UserPoolId:
+    Value: !Ref CognitoUserPool
+    Export:
+      Name: UserPoolId
+
+  UserPoolClientId:
+    Value: !Ref CognitoUserPoolClient
+    Export:
+      Name: UserPoolClientId
+
+  IdentityPoolId:
+    Value: !Ref CognitoIdentityPool
+    Export:
+      Name: IdentityPoolId
