@@ -5,7 +5,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class UserRepository {
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String BASE_URL = "https://9703-200-106-192-225.ngrok-free.app/client";
+    private final String BASE_URL = "http://ad14508baa62b43a49dcf64ed225de08-1154354306.us-east-1.elb.amazonaws.com/client";
 
     public User findByCpf(String cpf) {
         try {

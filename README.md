@@ -112,6 +112,7 @@ fiap-lambda51burguer$ cd HelloWorldFunction
 HelloWorldFunction$ mvn test
 ```
 
+
 ## Cleanup
 
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
