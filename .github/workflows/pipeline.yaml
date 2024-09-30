@@ -3,7 +3,7 @@ name: Deploy Lambda Function Validate CPF
 on:
   push:
     branches:
-      - main
+      - feature/deploy
   workflow_dispatch:
 
 env:
@@ -51,3 +51,7 @@ jobs:
             --no-fail-on-empty-changeset \
             --capabilities CAPABILITY_IAM \
             --region ${{ env.AWS_REGION }}
+      
+      # Adiciona um passo para exibir a URL armazenada no segredo
+      - name: Verify BASE_URL
+        run: echo ${{ secrets.BASE_URL }}  # Apenas para verificação, você pode remover isso em produção.
