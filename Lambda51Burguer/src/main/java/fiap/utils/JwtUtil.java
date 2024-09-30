@@ -10,17 +10,9 @@ import com.auth0.jwt.algorithms.Algorithm;
 import java.util.Date;
 
 public class JwtUtil {
-    private final String secretKey = getSecret();
+    private final String secretKey = SecretsManager.getSecret("jwtSecretKey");
     private final Algorithm algorithm = Algorithm.HMAC256(secretKey);
     private final Date expirationDate = new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 3); // 3 horas
-
-    private static String getSecret() {
-        AWSSecretsManager secretsManager = AWSSecretsManagerClientBuilder.standard().build();
-        GetSecretValueRequest getSecretValueRequest = new GetSecretValueRequest().withSecretId("jwtSecretKey");
-        GetSecretValueResult getSecretValueResult = secretsManager.getSecretValue(getSecretValueRequest);
-
-        return getSecretValueResult.getSecretString();
-    }
 
     public String generateToken(int id, String name, String cpf, String email, boolean isAdmin) {
         return JWT.create()
