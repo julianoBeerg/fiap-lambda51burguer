@@ -17,7 +17,7 @@ public class UserRepository {
 
     public User createUser(String cpf, String nome, String email) {
 
-        String url = String.format("%s?name=%s&email=%s&cpf=%s", BASE_URL, nome, email, cpf);
+        String url = String.format("%s?nameClient=%s&emailClient=%s&cpfClient=%s", BASE_URL, nome, email, cpf);
 
         try {
 

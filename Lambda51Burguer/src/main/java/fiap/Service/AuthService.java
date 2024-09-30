@@ -36,23 +36,25 @@ public class AuthService {
 
     public LoginResponse authenticate(LoginRequest request, String path) throws Exception {
 
-        String cpf = request.getCpf().replaceAll("[^0-9]", "");
+        String cpf = request.getCpf();
         String nome = request.getName();
         String email = request.getEmail();
         String password = request.getPassword();
 
         boolean isAdminPath = path.contains("admin");
 
-        if (!isAdminPath && cpf.isEmpty()) {
-
+        if (!isAdminPath && (cpf == null || cpf.isEmpty())) {
             String token = jwtUtil.generateAnonymousToken();
             return new LoginResponse(token);
+        }else if (isAdminPath && (cpf == null || cpf.isEmpty())){
+            throw new IllegalArgumentException("O usuário administrador não pode ser genérico");
         }
+
 
         if (!CpfValidator.isValid(cpf)) {
             throw new IllegalArgumentException("CPF '" + cpf + "' inválido!");
         }
-
+        cpf = cpf.replaceAll("[^0-9]", "");
         User user = userRepository.findByCpf(cpf);
         if (user == null) {
             if (nome != null && email != null && !nome.isEmpty() && !email.isEmpty()) {
