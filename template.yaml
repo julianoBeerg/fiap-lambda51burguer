@@ -10,6 +10,11 @@ Globals:
     LoggingConfig:
       LogFormat: JSON
 
+Parameters:
+  BaseUrlParameter:
+    Type: String
+    Description: "Base URL for the application"
+    
 Resources:
   AuthLambda:
     Type: AWS::Serverless::Function
