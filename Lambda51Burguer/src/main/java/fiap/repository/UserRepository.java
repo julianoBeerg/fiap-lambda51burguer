@@ -5,7 +5,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class UserRepository {
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String BASE_URL = private final String BASE_URL = System.getenv("BASE_URL") + "/client";
+    private final String BASE_URL = System.getenv("BASE_URL");
 
     public User findByCpf(String cpf) {
         try {
