@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60eb7174-80f1-4817-a88d-effc0f9f7aca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fiap/utils/SecretsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/Service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/Service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/utils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/utils/JwtUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d888c7ec-e660-4827-a98b-26d33efa3982/fiap/Service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/cache/d888c7ec-e660-4827-a98b-26d33efa3982/fiap/Service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d888c7ec-e660-4827-a98b-26d33efa3982/fiap/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/cache/d888c7ec-e660-4827-a98b-26d33efa3982/fiap/repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/Service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/utils/JwtUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +42,7 @@
     "JUnit.AppTest.testHandleRequestUnauthorizedAdminUser.executor": "Run",
     "Maven.Lambda51Burguer [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/secrets",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/dev/java projects/fiap-lambda51burguer/events/event.json"
   }
