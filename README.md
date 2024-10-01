@@ -14,20 +14,41 @@ Juliano Silva Nunes - RM 354144 - silva.juliano8130@gmail.com
 Thiago Augusto Nery - RM 355063 - doomerbr@gmail.com
 
 
-## 📁 Acesso ao projeto
-Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/GuiMM/fiap-51burguer),
+# FIAP 51Burger - Projeto
 
-Tambem pode acessar o video da segunda fase do projeto clicando  [aqui](https://www.youtube.com/watch?v=jiOKUzZcc_Y&ab_channel=PosTech-SoftwareArchitectureGrupo51),
- 
-E aos diagramas de DDD clicando [aqui](https://miro.com/app/board/uXjVKTKDZGE=/).
+## 📁 Acesso ao Projeto
 
+### Repositórios no GitHub
 
-## 🔧 Após a execução do projeto
+- **Infraestrutura Kubernetes com Terraform:**  
+  [fiap-k8s51burguer](https://github.com/GuiMM/fiap-k8s51burguer)
 
-Você pode acessar a lista de endpoints ja configurada para importar no postman clicando [aqui](https://github.com/GuiMM/fiap-51burguer/blob/master/FIAP%20-%20Burger%20API.postman_collection.json),
+- **Infraestrutura de Banco de Dados Gerenciáveis com Terraform:**  
+  [fiap-db51burguer](https://github.com/GuiMM/fiap-db51burguer)
 
-Ou acesse os endpoints pelo Swagger no link [link](http://localhost:8080/swagger-ui/index.html).
+- **Aplicação Executada no Kubernetes:**  
+  [fiap-51burguer](https://github.com/GuiMM/fiap-51burguer)
 
+- **Funções Lambda:**  
+  [fiap-lambda51burguer](https://github.com/julianoBeerg/fiap-lambda51burguer)
+
+### Recursos Adicionais
+
+- **Collection para Importar no Postman:**  
+  [FIAP - Burger API.postman_collection.json](https://github.com/GuiMM/fiap-51burguer/blob/master/FIAP%20-%20Burger%20API.postman_collection.json)
+
+- **Vídeo da Segunda Fase do Projeto:**  
+  [YouTube - PosTech Software Architecture Grupo 51](https://www.youtube.com/watch?v=jiOKUzZcc_Y&ab_channel=PosTech-SoftwareArchitectureGrupo51)
+
+- **Vídeo da Terceira Fase do Projeto:**  
+  [YouTube - PosTech Software Architecture Grupo 51](https://www.youtube.com/watch?v=jiOKUzZcc_Y&ab_channel=PosTech-SoftwareArchitectureGrupo51)
+
+- **PDF com Vídeo, Diagramas e Modelagens:**  
+  [Documento Google](https://docs.google.com/document/d/1Ay-OWOHbjec_wPjQI0ntPJny1N1lfZJFQqEHw97hONQ/edit?usp=drive_link)
+
+- **PDF com Repositórios e Collection:**  
+  [Documento Google](https://docs.google.com/document/d/1B933OMeg6z2DDZ-wWG-_dW9d0Q6TT2UhvOLmSbwQLnw/edit)
+  
 
 ## 🔨 Funcionalidades do projeto
 
@@ -57,62 +78,25 @@ Ou acesse os endpoints pelo Swagger no link [link](http://localhost:8080/swagger
 **Faça uma lista de tecnologias e técnicas utilizadas (a justificativa e descrição são opcionais)**:
 
 - `Aplicação`: Java 22
-- `Banco de dados`: My SQL
+- `Banco de dados`: Postgres
 - `Arquitetura`: Clean Architecture
 - `Containerização`: Docker
 - `Orquestação`: Kubernets
 - `Design de software`: DDD
+- `Nuvem`: AWS
 
 
-## 📐 Diagrama de arquitetura
+## 📐 Diagramas e documentações
+ 
+- [**Diagramas de Sequência:**](https://github.com/GuiMM/fiap-51burguer/blob/master/Diagrama%20de%20sequencia.png)
 
-```mermaid
-    graph TB
-    subgraph Kubernetes Cluster
-        subgraph Namespace
-            style Namespace fill:#e6e6e6,stroke:#000,stroke-width:2px
-            subgraph Deployment-Burguer-app
-                style Deployment-Burguer-app fill:#cce5ff,stroke:#007bff,stroke-width:2px
-                Pod1[Pod 1]
-                Pod2[Pod 2]
-                Pod3[Pod 3]
-            end
-            subgraph Deployment-DB
-                style Deployment-DB fill:#cce5ff,stroke:#007bff,stroke-width:2px
-                DatabasePod[(Database Pod)]
-            end
-            AppService[Service burguer-app]
-            style AppService fill:#d4edda,stroke:#155724,stroke-width:2px
-            HPA[Horizontal Pod Autoscaler]
-            style HPA fill:#fff3cd,stroke:#856404,stroke-width:2px
-            ConfigMap[ConfigMap]
-            style ConfigMap fill:#f8d7da,stroke:#721c24,stroke-width:2px
-            DatabaseService[Service DB]
-            style DatabaseService fill:#d4edda,stroke:#155724,stroke-width:2px
-        end
-        MetricsServer[Metrics Server]
-        style MetricsServer fill:#e2e3e5,stroke:#383d41,stroke-width:2px
-    end
+- [**Diagrama da arquitetura de autenticação**](https://drive.google.com/file/d/1mVJoEI81gEIqISXHRPgA1j_1fxkFm1ty/view)
 
-    User[Usuário] -->|HTTP Request| AppService
-    AppService --> Pod1
-    AppService --> Pod2
-    AppService --> Pod3
-    HPA --> Deployment-Burguer-app
-    HPA --> MetricsServer
-    Pod1 --> ConfigMap
-    Pod2 --> ConfigMap
-    Pod3 --> ConfigMap
-    Pod1 -->|SQL Queries| DatabaseService
-    Pod2 -->|SQL Queries| DatabaseService
-    Pod3 -->|SQL Queries| DatabaseService
-    DatabaseService --> DatabasePod
-    DatabasePod --> ConfigMap
-    Deployment-Burguer-app --> ConfigMap
-``` 
+- [**Diagrama da arquitetura do Sistema**](https://drive.google.com/file/d/1mVJoEI81gEIqISXHRPgA1j_1fxkFm1ty/view)
 
-## 📐 Diagrama de Sequencia
-https://github.com/GuiMM/fiap-51burguer/blob/master/Diagrama%20de%20sequencia.png
+- [**MER - Modelo de entidade relacionamento**](https://drive.google.com/file/d/1-e6vfEpsNNS0aMtH_256b9I7Zsa-4o-2/view)
+
+- [**Documentação da Modelagem de dados**](https://drive.google.com/file/d/1FF9qA6Z8XMe3DRzVudoB_-Rd9O4iAeow/view?usp=drive_link)
 
 ## 🛠️ Abrir e rodar o projeto
 
@@ -159,16 +143,13 @@ Após a instalação executar os comandos ordenados abaixo na pasta raiz da apli
 
      - kubectl apply -f .\k8s\hpa-burguer-app.yaml
 
-     
-MER - Modelo de entidade relacionamento
-https://github.com/GuiMM/fiap-51burguer/pull/12/commits/6e8aa20c961ead8507bafe190a84e0affc7ab932
 
 ## 📚 Mais informações do curso
 **Pós Tech - Turma 6SOAT**
 
 **Tech challenge 2: Refatoração do projeto seguindo os padrões de clean code e clean architecture e orquestração de containers de forma escalável**
 
-**Tech challenge 3: Refatoração da arquitetura para provisionar o cluster em cloud(AWS) e o banco no RDS.**
+**Tech challenge 3: Refatoração da arquitetura para provisionar o cluster em cloud(AWS), banco no RDS e sistema de autenticação com Serveless lambda e cognito.**
 
 
 ## 📄 Licença
