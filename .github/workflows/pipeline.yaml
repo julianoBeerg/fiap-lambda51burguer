@@ -52,3 +52,6 @@ jobs:
             --no-fail-on-empty-changeset \
             --capabilities CAPABILITY_IAM \
             --region ${{ env.AWS_REGION }}
+            --parameter-overrides BaseUrlParameter=${{ secrets.BASE_URL }}
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
