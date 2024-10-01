@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60eb7174-80f1-4817-a88d-effc0f9f7aca" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="feature/deploy" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
@@ -30,19 +34,19 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;AWS Lambda.[Local] fiap.App.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppTest.testHandleRequestAdminUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AppTest.testHandleRequestUnauthorizedAdminUser.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Lambda51Burguer [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/dev/java projects/fiap-lambda51burguer/events/event.json&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "AWS Lambda.[Local] fiap.App.executor": "Run",
+    "JUnit.AppTest.executor": "Run",
+    "JUnit.AppTest.testHandleRequestAdminUser.executor": "Run",
+    "JUnit.AppTest.testHandleRequestUnauthorizedAdminUser.executor": "Run",
+    "Maven.Lambda51Burguer [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/secrets",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/dev/java projects/fiap-lambda51burguer/events/event.json"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="AWS Lambda.[Local] fiap.App">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Lambda51Burguer" />

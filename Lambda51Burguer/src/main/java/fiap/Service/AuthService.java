@@ -13,6 +13,8 @@ import fiap.request.LoginRequest;
 import fiap.utils.CpfValidator;
 import fiap.utils.JwtUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import fiap.utils.SecretsManager;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -100,7 +102,7 @@ public class AuthService {
         SignUpRequest signUpRequest = new SignUpRequest()
                 .withClientId(clientId)
                 .withUsername(cpf)
-                .withPassword(isAdmin ? password : "@GenericAuth123")
+                .withPassword(isAdmin ? password : SecretsManager.getSecret("genericUserPassword"))
                 .withUserAttributes(
                         new AttributeType().withName("name").withValue(nome),
                         new AttributeType().withName("email").withValue(email)
