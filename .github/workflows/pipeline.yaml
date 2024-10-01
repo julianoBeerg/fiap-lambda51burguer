@@ -8,6 +8,7 @@ on:
 
 env:
   AWS_REGION: 'us-east-1'
+  BASE_URL: ${{ secrets.BASE_URL }}
 
 jobs:
   deploy:
