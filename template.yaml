@@ -19,6 +19,9 @@ Resources:
       Runtime: java21
       MemorySize: 512
       Role: arn:aws:iam::862807292265:role/LabRole
+      Environment:  
+        Variables:
+          BASE_URL: !Ref BaseUrlParameter
       Events:
         UserApi:
           Type: Api
