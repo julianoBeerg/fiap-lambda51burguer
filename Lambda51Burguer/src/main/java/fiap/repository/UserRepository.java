@@ -5,7 +5,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class UserRepository {
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String BASE_URL = "http://aa4b76e56e8044a098a1882f19900bc0-1394836592.us-east-1.elb.amazonaws.com/swagger-ui/index.html/client";
+    private final String BASE_URL = "http://aa4b76e56e8044a098a1882f19900bc0-1394836592.us-east-1.elb.amazonaws.com/client";
 
     public User findByCpf(String cpf) {
         try {
