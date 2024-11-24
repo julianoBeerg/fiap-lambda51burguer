@@ -95,7 +95,7 @@ Resources:
   SecretCognitoIds:
     Type: AWS::SecretsManager::Secret
     Properties:
-      Name: CognitoIds
+      Name: CognitoIds-new
       SecretString: !Sub |
         {
           "UserPoolId": "${CognitoUserPool}",
