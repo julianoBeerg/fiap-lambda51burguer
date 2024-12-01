@@ -23,7 +23,7 @@ Resources:
       Handler: fiap.App::handleRequest
       Runtime: java21
       MemorySize: 512
-      Role: arn:aws:iam::123236937509:role/LabRole
+      Role: arn:aws:iam::298918074476:role/LabRole
       Environment:  
         Variables:
           BASE_URL: !Ref BaseUrlParameter
