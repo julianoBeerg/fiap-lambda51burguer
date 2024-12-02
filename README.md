@@ -20,14 +20,19 @@ Thiago Augusto Nery - RM 355063 - doomerbr@gmail.com
 
 ### Repositórios no GitHub
 
-- **Infraestrutura Kubernetes com Terraform:**  
+- **Infraestrutura SQL (postgres) Kubernetes com Terraform:**  
   [fiap-k8s51burguer](https://github.com/GuiMM/fiap-k8s51burguer)
 
-- **Infraestrutura de Banco de Dados Gerenciáveis com Terraform:**  
+- **Infraestrutura de Banco de Dados SQL (postgres) Gerenciáveis com Terraform:**  
   [fiap-db51burguer](https://github.com/GuiMM/fiap-db51burguer)
 
-- **Aplicação Executada no Kubernetes:**  
-  [fiap-51burguer](https://github.com/GuiMM/fiap-51burguer)
+- **Infraestrutura de Banco de Dados NoSQL (mongodb) Gerenciáveis com Terraform:**  
+  [fiap-atlasdb51burguer](https://github.com/GuiMM/fiap-atlasdb51burguer)
+  
+- **Link dos repositório dos microserviços aplicação que é executada no Kubernetes:**  
+  - [Pedido e produto (Postgres-SQL)](https://github.com/Isa-Bellinazzi/fiap-product-and-order51burguer)
+  - [Cliente (Postgres-SQL)](https://github.com/Tnery81/fiap-client51burger)
+  - [Checkout (Mondo - NoSQL)](https://github.com/julianoBeerg/fiap-payment51burguer)
 
 - **Funções Lambda:**  
   [fiap-lambda51burguer](https://github.com/julianoBeerg/fiap-lambda51burguer)
@@ -41,7 +46,10 @@ Thiago Augusto Nery - RM 355063 - doomerbr@gmail.com
   [YouTube - PosTech Software Architecture Grupo 51](https://www.youtube.com/watch?v=jiOKUzZcc_Y&ab_channel=PosTech-SoftwareArchitectureGrupo51)
 
 - **Vídeo da Terceira Fase do Projeto:**  
-  [YouTube - PosTech Software Architecture Grupo 51](https://www.youtube.com/watch?v=jiOKUzZcc_Y&ab_channel=PosTech-SoftwareArchitectureGrupo51)
+  [YouTube - PosTech Software Architecture Grupo 51](https://www.youtube.com/watch?v=Zi2BFEvv9kk&ab_channel=PosTech-SoftwareArchitectureGrupo51)
+
+- **Vídeo da quarta Fase do Projeto:**  
+  [YouTube - PosTech Software Architecture Grupo 51](https://www.youtube.com/watch?v=Zi2BFEvv9kk&ab_channel=PosTech-SoftwareArchitectureGrupo51)
 
 - **PDF com Vídeo, Diagramas e Modelagens:**  
   [Documento Google](https://docs.google.com/document/d/1Ay-OWOHbjec_wPjQI0ntPJny1N1lfZJFQqEHw97hONQ/edit?usp=drive_link)
@@ -83,7 +91,7 @@ Thiago Augusto Nery - RM 355063 - doomerbr@gmail.com
 - `Containerização`: Docker
 - `Orquestação`: Kubernets
 - `Design de software`: DDD
-- `Nuvem`: AWS
+- `Nuvem`: AWS (Serveless, Lambda e Cognito)
 
 
 ## 📐 Diagramas e documentações
@@ -96,7 +104,7 @@ Thiago Augusto Nery - RM 355063 - doomerbr@gmail.com
 
 - [**MER - Modelo de entidade relacionamento**](https://drive.google.com/file/d/1-e6vfEpsNNS0aMtH_256b9I7Zsa-4o-2/view)
 
-- [**Documentação da Modelagem de dados**](https://drive.google.com/file/d/1FF9qA6Z8XMe3DRzVudoB_-Rd9O4iAeow/view?usp=drive_link)
+- [**Documentação da Modelagem de dados**](https://drive.google.com/file/d/1xu699uPLNKy73oYwtUhJYNGyGYmoQQeZ/view?usp=sharing)
 
 ## 🛠️ Abrir e rodar o projeto
 
@@ -105,44 +113,41 @@ Thiago Augusto Nery - RM 355063 - doomerbr@gmail.com
 Deverá ter instalado:
 
     - JDK 22
+    - AWS CLI configurado com credenciais válidas e acesso à sua conta AWS.
     - Docker(Certifique-se de que as opções de kubernets estejam habilitadas no docker desktop)
 
 Após a instalação executar os comandos ordenados abaixo na pasta raiz da aplicação:
 
-1 . **Aplicar ConfigMap:**
+1 . **Atualizar o Gerenciador de Pacotes e Instalar Dependências:**
 
-    - kubectl apply -f .\k8s\configmap-burguer-app.yaml
+    - sudo apt-get update && sudo apt-get install -y python3-pip
+    
 
+2 . **Instalar AWS SAM CLI:**
 
-2 . **Aplicar Métricas:**
+    - pip3 install aws-sam-cli
+    
 
-    - kubectl apply -f .\k8s\metrics.yaml
+3 . **Construir a Aplicação de Autenticação:**
 
+     - sam build
+     
 
-3 . **Aplicar Deployment do Banco de Dados:**
+4 . **Validar o Template de Autenticação:**
 
-     - kubectl apply -f .\k8s\deployment-db.yaml
-
-
-4 . **Aplicar Service do Banco de Dados:**
-
-     - kubectl apply -f .\k8s\service-db.yaml
-
-
-5 . **Aplicar Deployment da Aplicação:**
-
-     - kubectl apply -f .\k8s\deployment-burguer-app.yaml
+     - sam validate
 
 
-6 . **Aplicar Service da Aplicação:**
+5 . **Deployar a Aplicação no AWS Lambda:**
 
-     - kubectl apply -f .\k8s\service-burguer-app.yaml
-
-
-7 . **Aplicar Horizontal Pod Autoscaler:**
-
-     - kubectl apply -f .\k8s\hpa-burguer-app.yaml
-
+     - sam deploy \
+        --stack-name fiap-lambda51burguer \
+        --no-confirm-changeset \
+        --no-fail-on-empty-changeset \
+        --capabilities CAPABILITY_IAM \
+        --region ${{ env.AWS_REGION }} \
+        --parameter-overrides BaseUrlParameter="${{ secrets.BASE_URL }}"
+        
 
 ## 📚 Mais informações do curso
 **Pós Tech - Turma 6SOAT**
