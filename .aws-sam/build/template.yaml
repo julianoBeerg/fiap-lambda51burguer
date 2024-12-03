@@ -9,6 +9,10 @@ Globals:
     MemorySize: 512
     LoggingConfig:
       LogFormat: JSON
+Parameters:
+  BaseUrlParameter:
+    Type: String
+    Description: Base URL for the application
 Resources:
   AuthLambda:
     Type: AWS::Serverless::Function
@@ -17,6 +21,11 @@ Resources:
       Handler: fiap.App::handleRequest
       Runtime: java21
       MemorySize: 512
+      Role: arn:aws:iam::298918074476:role/LabRole
+      Environment:
+        Variables:
+          BASE_URL:
+            Ref: BaseUrlParameter
       Events:
         UserApi:
           Type: Api

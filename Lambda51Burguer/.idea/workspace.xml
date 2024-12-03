@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60eb7174-80f1-4817-a88d-effc0f9f7aca" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/utils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/AuthLambda/fiap/utils/JwtUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/build/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/build/template.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d888c7ec-e660-4827-a98b-26d33efa3982/fiap/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/cache/d888c7ec-e660-4827-a98b-26d33efa3982/fiap/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.aws-sam/cache/d888c7ec-e660-4827-a98b-26d33efa3982/fiap/utils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../.aws-sam/cache/d888c7ec-e660-4827-a98b-26d33efa3982/fiap/utils/JwtUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../template.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fiap/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fiap/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/fiap/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/fiap/AppTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
