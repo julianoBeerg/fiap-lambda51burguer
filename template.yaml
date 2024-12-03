@@ -2,7 +2,6 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
   fiap-lambda51burguer
-
 Globals:
   Function:
     Timeout: 30
@@ -23,7 +22,8 @@ Resources:
       Handler: fiap.App::handleRequest
       Runtime: java21
       MemorySize: 512
-      Environment:
+      Role: arn:aws:iam::298918074476:role/LabRole
+      Environment:  
         Variables:
           BASE_URL: !Ref BaseUrlParameter
       Events:
@@ -100,7 +100,6 @@ Resources:
           "UserPoolId": "${CognitoUserPool}",
           "UserPoolClientId": "${CognitoUserPoolClient}"
         }
-
 Outputs:
   UserPoolId:
     Value: !Ref CognitoUserPool
