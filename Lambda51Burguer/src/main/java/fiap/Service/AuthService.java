@@ -102,7 +102,7 @@ public class AuthService {
         SignUpRequest signUpRequest = new SignUpRequest()
                 .withClientId(clientId)
                 .withUsername(cpf)
-                .withPassword(isAdmin ? password : SecretsManager.getSecret("genericUserPassword"))
+                .withPassword(isAdmin ? password : "genericUserPassword")
                 .withUserAttributes(
                         new AttributeType().withName("name").withValue(nome),
                         new AttributeType().withName("email").withValue(email)
