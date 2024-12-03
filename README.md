@@ -1,4 +1,4 @@
-# Fiap 51 Burguer
+# Fiap 51 Burguer - Lambda/Cognito
 
 Sistema de pedidos de lanche. Segundo tech challenge do curso de Pós Tech - turma 6SOAT de Software Architecture para aplicar conceitos de clean code e clean architecture.
 
@@ -159,4 +159,3 @@ Após a instalação executar os comandos ordenados abaixo na pasta raiz da apli
 
 ## 📄 Licença
 Não se aplica.
-
